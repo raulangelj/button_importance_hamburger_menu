@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.nav-bar {
+  background: #222;
+  padding: 5px 20px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+}
+
+.menu li a {
+  display: block;
+}
+
+.logo a {
+  font-size: 20px;
+}
+
+.button .secondary {
+  border-bottom: 1px #444 solid;
+}
+
+/* Mobile Menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  order: 1;
+}
+
+.nav-item.button {
+  order: 2;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+
+.nav-item.active {
+  display: block;
+}
+
+.toggle, .menu-icon {
+  cursor: pointer;
+}
+
+.nav-icon {
+  background: #999;
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+}
+
+.nav-icon::before, .nav-icon::after {
+  background: #999;
+  display: block;
+  height: 2px;
+  width: 18px;
+  content: "";
+  position: absolute;
+}
+
+.nav-icon::before {
+  top: 5px;
+}
+
+.nav-icon::after {
+  top: -5px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* Tablet Menu */
+@media all and (min-width: 460px) {
+  .menu {
+    justify-content: center;
+  }
+  .logo {
+    flex: 1;
+  }
+  .nav-item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+  .toggle{
+    order: 2;
+  }
+  .button.secondary {
+    border: 0;
+    padding-right: 10px;
+  }
+  .button .nav-link {
+    text-decoration: none;
+    padding: 7px 15px;
+    background: teal;
+    border: 1px solid #006d6d;
+    border-radius: 5em;
+  }
+  .button.secondary .nav-link {
+    background: transparent;
+  }
+  .button .nav-link:hover {
+    transition: all 0.25s ;
+  }
+  .button:not(.secondary) .nav-link:hover {
+    background: #006d6d;
+    border-color: #005959;
+  }
+  .button.secondary .nav-link:hover {
+    color: #ddd;
+  }
+}
+
+/* Desktop */ 
+@media all and (min-width: 768px) {
+  .nav-item {
+    display: block;
+    width: auto;
+  }
+  .toggle {
+    display: none;
+  }
+  .logo {
+    order: 0;
+  }
+  .nav-item {
+    order: 1;
+  }
+  .button {
+     order: 2;
+  }
+  .menu .nav-item {
+    padding: 15px 10px;
+  }
+  .menu .nav-item.button {
+    padding-right: 0px;
+  }
+}
